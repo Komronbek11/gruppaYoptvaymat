@@ -5,6 +5,73 @@ body{
   background: rgb(16,255,60);
 background: radial-gradient(circle, rgba(16,255,60,1) 13%, rgba(22,108,230,0.9038461538461539) 81%);
 }
+
+.sidebar {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    z-index: 200;
+    transition: all 0.7s ease 0s;
+    transform: translateX(-100px);
+}
+
+.toggle-btn {
+    font-size: 35px;
+    cursor: pointer;
+    color: green;
+    background: transparent;
+    border: 0px;
+    padding: 10px;
+}
+
+.menu {
+    padding: 50px 0 0 20px;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    padding: 10px 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: red;
+    font-size: 18px;
+}
+
+.content {
+    padding: 16px;
+}
+
+.sidebar.open {
+    width: 250px;
+    transform: translateX(1px);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #E5E4E2;
+    width: 100%;
+    position: fixed;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    height: 50px;
+}
+
+.logo {
+    padding: 10px;
+    color: #728FCE;
+}
+
     table {
       border-radius: 10px;
       width: 100%;
