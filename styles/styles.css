@@ -26,6 +26,7 @@ background: radial-gradient(circle, rgba(16,255,60,1) 13%, rgba(22,108,230,0.903
     background: transparent;
     border: 0px;
     padding: 10px;
+    position: fixed;
 }
 
 .menu {
@@ -43,7 +44,7 @@ background: radial-gradient(circle, rgba(16,255,60,1) 13%, rgba(22,108,230,0.903
 
 .menu ul li a {
     text-decoration: none;
-    color: red;
+    color: gold;
     font-size: 18px;
 }
 
