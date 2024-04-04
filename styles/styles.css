@@ -15,7 +15,7 @@ background: radial-gradient(circle, rgba(16,255,60,1) 13%, rgba(22,108,230,0.903
     background-color: #111;
     z-index: 200;
     transition: all 0.7s ease 0s;
-    transform: translateX(-100px);
+    transform: translateX(-150px);
 }
 
 .toggle-btn {
@@ -25,7 +25,6 @@ background: radial-gradient(circle, rgba(16,255,60,1) 13%, rgba(22,108,230,0.903
     background: transparent;
     border: 0px;
     padding: 10px;
-    position: fixed;
 }
 
 .menu {
