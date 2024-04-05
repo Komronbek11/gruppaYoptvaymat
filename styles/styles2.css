@@ -13,6 +13,7 @@ background: radial-gradient(circle, rgba(16,255,60,1) 13%, rgba(22,108,230,0.903
     top: 0;
     left: 0;
     background-color: transparent;
+    backdrop-filter: blur(15px);
     z-index: 200;
     transition: all 0.7s ease 0s;
     transform: translateX(-500px);
