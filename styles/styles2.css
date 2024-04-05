@@ -23,7 +23,6 @@ background: radial-gradient(circle, rgba(16,255,60,1) 13%, rgba(22,108,230,0.903
     cursor: pointer;
     color: black;
     background: transparent;
-    backdrop-filter: blur(5px);
     border-radius: 15px;
     border: 0px;
     padding: 10px;
