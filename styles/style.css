@@ -1,1 +1,30 @@
+body{
+  overflow-x: hidden;
+  background-color: darkturquoise;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  color: black;
+  font-family: Times New Roman;
+  border: 2px solid blue;
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid blue;
+}
+
+th {
+  background-color: aquamarine;
+}
+h1{
+  font-family: Georgia;
+}
+tr:hover {
+  background-color: chartreuse;
+  
+}
+
 
