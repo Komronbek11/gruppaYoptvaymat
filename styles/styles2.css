@@ -5,9 +5,7 @@ body{
   background: rgb(16,255,60);
 background: radial-gradient(circle, rgba(16,255,60,1) 13%, rgba(22,108,230,0.9038461538461539) 81%);
 }
-h4{
-    color: lime;
-}
+
 .btn {
   display: flex;
   justify-content: center;
