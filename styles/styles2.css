@@ -37,13 +37,13 @@ h4{
   border-radius: 5rem;
 }
 
-strong {
-  z-index: 2;
-  font-family: 'Avalors Personal Use';
-  font-size: 12px;
-  letter-spacing: 5px;
-  color: #FFFFFF;
-  text-shadow: 0 0 4px white;
+strong, h4, pre, br{
+  z-index: ;
+  font-family: Times New Roman;
+  font-size: 15px;
+  letter-spacing: ;
+  color: chartreuse;
+  text-shadow: 0 0 4px yellow;
 }
 
 #glow {
