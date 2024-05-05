@@ -140,3 +140,16 @@ background: radial-gradient(circle, rgba(158,254,10,0.9871794871794872) 11%, rgb
     width: 250px;
     transform: translateX(1px);
 }
+ul img{
+    display: block;
+    margin: 0 auto;
+    max-width: 60%;
+    max-height: 50%;
+    align-content: center;
+    justify-items: center;
+    float: center;
+    align-items: center;
+    justify-content: center;
+    background-size: 50px;
+    border-radius: 100%;
+    }
