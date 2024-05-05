@@ -10,6 +10,14 @@ background: radial-gradient(circle, rgba(158,254,10,0.9871794871794872) 11%, rgb
       text-align: center;
     font-family: Times New Roman;
   }
+strong, h4, pre, br{
+  z-index: ;
+  font-family: Times New Roman;
+  font-size: 15px;
+  letter-spacing: ;
+  color: chartreuse;
+  text-shadow: 0 0 4px yellow;
+}
   td, th {
     text-align: center;
     border: 2px solid red;
