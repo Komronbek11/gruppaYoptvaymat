@@ -140,7 +140,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#02a5cc",endCo
   header img{
     
     height: 100%;
-    width: 360px;
+    width: 100%;
 }
   p{
     font-size: 18px;
@@ -184,6 +184,4 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#02a5cc",endCo
     font-family: Times New Roman;
   }
   
-  .container{
-    width: 50px;
-}
+
