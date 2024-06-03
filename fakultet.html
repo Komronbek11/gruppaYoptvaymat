@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Komronbek">
+    <meta name="keywords" content="1-40010101B">
+    <meta name="author" content="Komronbek Sharipov">
+  <title>Факултети ТИ ва ИС</title>
+  <link rel="icon" type="image/png" href="AI.png">
+  <style>
+  
+ body{
+  height: 100%;
+    overflow-x: ;
+   
+}
+body{
+  background: rgb(2,165,204);
+background: -moz-radial-gradient(circle, rgba(2,165,204,0.8846153846153846) 14%, rgba(26,134,231,0.907051282051282) 38%, rgba(93,115,236,0.8990384615384616) 71%);
+background: -webkit-radial-gradient(circle, rgba(2,165,204,0.8846153846153846) 14%, rgba(26,134,231,0.907051282051282) 38%, rgba(93,115,236,0.8990384615384616) 71%);
+background: radial-gradient(circle, rgba(2,165,204,0.8846153846153846) 14%, rgba(26,134,231,0.907051282051282) 38%, rgba(93,115,236,0.8990384615384616) 71%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#02a5cc",endColorstr="#5d73ec",GradientType=1);
+  font-family: "Avenir Next", "Avenir", sans-serif, Times New Roman;
+}
+
+#menuToggle{
+  display: block;
+  position: relative;
+  top: 20px;
+  left: 15px;
+  z-index: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+
+#menuToggle a{
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover{
+  color: lime
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 42px;
+  position: absolute;
+  top: -7px;
+  left: -10px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2; 
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: yellow;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: red;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu
+{
+  background-color: transparent;
+    backdrop-filter: blur(19px);
+  position: absolute;
+  height: 900px;
+  width: 290px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+ 
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu  li{
+  padding: 5px 0;
+  font-size: 16px;
+}
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+ ul img{
+    display: block;
+    margin: 0 auto;
+    max-width: 50%;
+    max-height: 50%;
+    align-content: center;
+    justify-items: center;
+    float: center;
+    align-items: center;
+    justify-content: center;
+    background-size: 50px;
+    border-radius: 100%;
+    border: 2px solid blue;
+  }
+  main  img{
+    display: block;
+    margin: 0 auto;
+    max-width: 35%;
+    max-height: 35%;
+    align-content: center;
+    justify-items: center;
+    float: center;
+    align-items: center;
+    justify-content: center;
+    background-size: 50px;
+    border-radius: 100%;
+    border: 2px solid blue;
+      }
+  p{
+    font-size: 18px;
+    font-family: Georgia;
+    color: blue;
+    font-face: bold;
+  }
+  h3, h2{
+    text-align: center;
+    font-family: Times New Roman;
+    color: black;
+    font-face: bold;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 10px;
+  }
+   li{
+     font-family: Georgia;
+   }
+  /*стил для форма лист*/
+  * { box-sizing: border-box;
+  }
+.staggered-list-content {
+  max-width: 400px;
+  margin: 2rem auto;
+  height: 100%;
+}
+
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  heigh: 20vh;
+  padding: 0;
+  owerflow: scroll;
+  height: 100%;
+}
+.list li + li {
+  margin-top: 1rem;
+}
+.listItem {
+  border: 1px solid black;
+  background: transparent;
+    backdrop-filter: blur(15px);
+  border-radius: 40px;
+  cursor: pointer;
+ background: rgb(58,43,196);
+background: linear-gradient(120deg, rgba(58,43,196,1) 15%, rgba(66,191,255,0.891025641025641) 67%);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem;
+  margin-top: 10px;
+}
+
+.avatar {
+  font-size: 50px;
+  align-items: center;
+  text-align: center;
+  background rgb(122,159,9);
+ margin-right: 2rem;
+}
+  .avatar:nth-of-type(3) {
+    background: rgb(230,247,85);
+background: linear-gradient(120deg, rgba(230,247,85,1) 19%, rgba(14,121,129,0.891025641025641) 64%);
+  }
+.listItem .expanded .avatar {
+  width: 8rem;
+  height: 8rem;
+  margin-right: 0;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.line {
+  font-family: Georgia;
+  text-align: center;
+  align-items: center;
+  color: yellow;
+  background: rgb(65,69,50);
+background: linear-gradient(120deg, rgba(65,69,50,1) 19%, rgba(74,102,105,0.891025641025641) 64%);
+  width: 14rem;
+  border-radius: 30px;
+  height: 1.5rem;
+}
+.line:nth-of-type(2) {
+  width: 12rem;
+}
+.line:nth-of-type(3) {
+  width: 8rem;
+}
+.line + .line {
+  margin-top: 1rem;
+}
+
+.listItem.expanded .description {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.listItem.expanded {
+  background-color: red;
+  padding: 2rem;
+  flex-direction: column;
+}
+
+.additional-content {
+  width: 100%;
+  margin-top: 2rem;
+  display: none;
+}
+.listItem .expanded .additional-content {
+  display: block;
+}
+.chunk {
+  color: yellow;
+  border-radius: 30px;
+   background: rgb(65,69,50);
+background: linear-gradient(120deg, rgba(65,69,50,1) 19%, rgba(74,102,105,0.891025641025641) 64%);
+  height: 5rem;
+  opacity: 0;
+}
+.listItem .expanded .chunk {
+  opacity: 1;
+}
+.chunk + .chunk {
+  margin-top: 1rem;
+}
+  h1{
+    color: white;
+    content-items: center;
+    font-size: 25px;
+    font-family: 'Courier';
+    align-itemms: center;
+    float: center;
+    text-align: center;
+  }
+  h1:hover{
+    content-items: center;
+    font-size:
+    font-family: Georgia;
+    align-itemms: center;
+    float: center;
+    text-align: center;
+  }
+  pre{
+    text-align: center;
+    font-size: 15px;
+    font-family: Times New Roman;
+  }
+  main{ 
+    position: relative;
+  }
+  
+  </style>
+
+</head>
+<body>
+
+<nav role="navigation">
+  <div id="menuToggle">
+    
+    <input type="checkbox" />
+    
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <ul id="menu">
+      <img src="AI.png">
+      <h5>Факултети Технологияҳои иттилоотӣ ва интеллекти сунъӣ</h5>
+      
+      <li><a href="asosi.html">Асосӣ</a></li>
+            <li><details>
+            <summary>Ихтисосҳо</summary>
+            <ul>
+                <li><a href="FITII">1-40010101</li>
+                <li>1-40010102</li>
+                <li>1-40010103</li>
+                <li>1-40010104</li>
+            </ul>
+        </details></a></li>
+            <li><details> <summary>Натиҷаи имтиҳонҳо</summary>
+              <ul>
+                <li><a href="natija.html">1-40010101</li>
+                <li><a href="#">1-40010102</a></li>
+                <li><a href="#">1-40010103</a></li>
+                <li><a href="#">1-40010107</a></li>
+            </ul>
+        </details></a></li>
+          <details>
+            <summary>Рақамҳои мобилии донишҷуён </summary>
+            <ul>
+               <li><a href="contacts.html">1-40010101</a></li>
+               <li><a href="#">1-40010102</a></li>
+               <li><a href="#">1-40010103</a></li>
+               <li><a href="#">1-40010104</a></li>
+               <li><a href="#">1-40010107</a></li>
+              <li></li>
+            </ul>
+          </details>
+           
+    </ul>
+  </div>
+  
+ <main>
+  <div class="container">
+    <img src="AI.png">
+  </div>
+ </main>
+  <div class="course-info">
+    <h2>Факултети Технологияҳои иттилоотӣ ва интеллекти сунъӣ</h2>
+    <h3>Курс: 1</h3>
+    <h3>Группа: 1-40010101В</h3>
+  </div>
+  <h2>Список студентов</h2>
+   
+  <main>
+  <div class="staggered-list-content">
+  <ul class="list">
+    <li class="listItem">
+      <div class="avatar"><center><h1>ШК</h1></center></div>
+      
+      <div class="description">
+        <div class="line">Шарипов Комронбек</div>
+        <div class="line">Логин:16-4514/23</div>
+        <div class="line">Пароль:451488</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"><pre>   Ҷои истиқомат: 
+   ш.Душанбе, н.Фирдавсӣ, Саховат
+   Рӯз,моҳ,соли таввалуд;
+   11.01.2005с
+        </pre></div>
+        <div class="chunk"><pre>   Ҷои таввалуд:
+ в.Хатлон, н.Қубодиён, д.Қуша-чинор
+   ҷ/д: 20-солагии Истиқлол
+        </pre></div>
+        <div class="chunk"><pre>    Контакты:
+   Телефони шахсӣ ; 111157747
+   Телефони волидайн ; 935544111
+        </pre></div>
+      </div>
+    </li>
+    <li class="listItem">
+      <div class="avatar"><h1>ҲИ</h1></div>
+      
+      <div class="description">
+        <div class="line">Ҳомидзода Исмоил</div>
+        <div class="line">Логин:16-4257/23	</div>
+        <div class="line">Пароль:425714</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+    <li class="listItem">
+      <div class="avatar"><h1>МЭ</h1></div>
+      
+      <div class="description">
+        <div class="line">Муродбеков Элчибек</div>
+        <div class="line">Логин:16-4712/23	</div>
+        <div class="line">Пороль:471222</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+    <li class="listItem">
+      <div class="avatar"><h1>РС</h1></div>
+      
+      <div class="description">
+        <div class="line">Рафиқҷонзода Сафина</div>
+        <div class="line">Логин:16-4760/23</div>
+        <div class="line">Пароль:47603</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"><pre>   Ҷои истиқомат: 
+ ш.Душанбе,н.Фирдавсӣ,Н.Қарабоев
+      Рӯз,моҳ,соли таввалуд;
+        01.09.2005с
+        </div>
+        <div class="chunk"><pre>   Ҷои таввалуд:
+      ш.Ҳуҷанд, н.Ашт
+        </div>
+        <div class="chunk"><pre>    Контакты:
+  Телефони шахсӣ ; 006881605
+Телефони волидайн ; -----
+        </pre></div>
+      </div>
+    </li>
+    <li class="listItem">
+      <div class="avatar"><h1>АЖ</h1></div>
+      
+      <div class="description">
+        <div class="line">Айтиева Жазгул</div>
+        <div class="line">Логин:16-4762/23</div>
+        <div class="line">Пороль:476267</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+    
+    <li class="listItem">
+      <div class="avatar"><h1>ШФ</h1></div>
+      
+      <div class="description">
+        <div class="line">Шамсуддинзода Фирдавс</h5></div>
+        <div class="line">Логин:16-4224/23</div>
+        <div class="line">Пароль:422466</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+    
+    <li class="listItem">
+      <div class="avatar"><h1>ФБ</h1></div>
+      
+      <div class="description">
+        <div class="line">Файзуллоев Беҳзодҷон</div>
+        <div class="line">Логин:16-4274/23</div>
+        <div class="line">Пароль:427448</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+    
+    <li class="listItem">
+      <div class="avatar"><h1>РА</h1></div>
+      
+      <div class="description">
+        <div class="line">Рахимов Амирҷон</div>
+        <div class="line">Логин:16-4315/23</div>
+        <div class="line">Пороль:431511</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+    
+    <li class="listItem">
+      <div class="avatar"><h1>АА</h1></div>
+      
+      <div class="description">
+        <div class="line">Азамов Азалшо</div>
+        <div class="line">Логин:16-4362/23</div>
+        <div class="line">Пороль:436247</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+    
+    <li class="listItem">
+      <div class="avatar"><h1>ИШ</h1></div>
+      
+      <div class="description">
+        <div class="line">Иноятзода Шукруллоҳ</div>
+        <div class="line">Логин:16-4476/23	</div>
+        <div class="line">Пороль:447699</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+   <li class="listItem">
+      <div class="avatar"><h1>НН</h1></div>
+      
+      <div class="description">
+        <div class="line">Набиев Набиҷон</div>
+        <div class="line">Логин:16-4860/23</div>
+        <div class="line">Пороль:486083</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+    <li class="listItem">
+      <div class="avatar"><h1>КФ</h1></div>
+      
+      <div class="description">
+        <div class="line">Качуров Фирӯз</div>
+        <div class="line">Логин:16-4917/23</div>
+        <div class="line">Пороль:491772</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+    <li class="listItem">
+      <div class="avatar"><h1>БТ</h1></div>
+      
+      <div class="description">
+        <div class="line">Беҳрузи Тоҳири</div>
+        <div class="line">Логин:16-4900/23</div>
+        <div class="line">Пороль:490053</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+    <li class="listItem">
+      <div class="avatar"><h1>ҶМ</h1></div>
+      
+      <div class="description">
+        <div class="line">Ҷуразода Муҳаммадшариф</div>
+        <div class="line">Логин:16-3581/23</div>
+        <div class="line">Пороль:358190</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+    <li class="listItem">
+      <div class="avatar"><h1>ҲМ</h1></div>
+      
+      <div class="description">
+        <div class="line">Ҳамроев Муҳаммад</div>
+        <div class="line">Логин:</div>
+        <div class="line">Пороль:</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+    <li class="listItem">
+      <div class="avatar"><h1>ОР</h1></div>
+      
+      <div class="description">
+        <div class="line">Одиназода Раҷабали</div>
+        <div class="line">Логин:16-4517/23</div>
+        <div class="line">Пороль:451710</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+    <li class="listItem">
+      <div class="avatar"><h1>ИМ</h1></div>
+      
+      <div class="description">
+        <div class="line">Изатуллоев Мирмухаммад</div>
+        <div class="line">Логин:16-4573/23</div>
+        <div class="line">Пороль:457376</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+    <li class="listItem">
+      <div class="avatar"><h1>РҲ</h1></div>
+      
+      <div class="description">
+        <div class="line">Роҳбаров Ҳисравҷон</div>
+        <div class="line">Логин:16-4578/23</div>
+        <div class="line">Пороль:457837</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+    <li class="listItem">
+      <div class="avatar"><h1>АР</h1></div>
+      
+      <div class="description">
+        <div class="line">Асалзода Ромиш</div>
+        <div class="line">Логин:16-4600/23</div>
+        <div class="line">Пороль:460084</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+    <li class="listItem">
+      <div class="avatar"><h1>СҶ</h1></div>
+      
+      <div class="description">
+        <div class="line">Сафаров Ҷонибек</div>
+        <div class="line">Логин:16-4687/23	</div>
+        <div class="line">Пороль:	468771</div>
+      </div>
+      
+      <div class="additional-content">
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+        <div class="chunk"></div>
+      </div>
+    </li>
+  </ul>
+</div>
+  
+    
+  
+   
+  </main>
+  <script src='https://assets.codepen.io/16327/gsap-latest-beta.min.js'></script>
+<script src='https://assets.codepen.io/16327/Flip.min.js'></script><script  src="./script.js"></script>
+<footer>
+  
+  
+</footer>
+</body>
+</html>
